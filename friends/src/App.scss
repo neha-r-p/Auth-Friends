@@ -1,10 +1,19 @@
 .App {
   text-align: center;
+ 
 
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 500px;
+    max-width: 500px; 
+    margin: 20px auto;
+  }
   form {
     display: flex;
     flex-direction: column;
-    
+
     button {
       width: 100px;
       height: 25px;
@@ -15,6 +24,11 @@
 
     label {
       margin: 15px auto;
+      display: flex;
+      flex-direction: column;
+      input {
+        height: 25px;
+      }
     }
   }
 }
