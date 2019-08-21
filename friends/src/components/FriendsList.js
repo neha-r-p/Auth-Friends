@@ -17,6 +17,7 @@ const FriendsList = () => {
         axiosAuth().get('http://localhost:5000/api/friends')
         .then(res => {
             console.log(res.data)
+            setFriendsList(res.data)
         })
         .catch(err => {
             console.log(err.response)
@@ -26,7 +27,10 @@ const FriendsList = () => {
 
   return (
     <div>
-      List of Friends: <Friend />
+      List of Friends: 
+      {friendsList.length > 0 ? 
+      
+      friendsList.map(friend => <Friend friend={friend} key={friend.id} />) : null }
     </div>
   );
 };

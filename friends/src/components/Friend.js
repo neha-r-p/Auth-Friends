@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Friend = () => {
+const Friend = ({friend}) => {
     return(
-        <div>Friend</div>
+        <div>{friend.name}</div>
     )
 }
 
