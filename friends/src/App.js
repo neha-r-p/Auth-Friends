@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Login from './components/Login';
 import AddFriend from './components/AddFriend';
+import PrivateRoute from './components/PrivateRoute'
 
 import "./App.scss";
 
