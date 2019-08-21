@@ -15,8 +15,9 @@ const Login = () => {
     console.log("form submitted");
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/login", this.state.credentials)
+      .post("http://localhost:5000/api/login", credentials)
       .then(res => {
+          console.log(res.data.payload)
         localStorage.setItem("token", res.data.payload);
       })
       .catch(err => console.log(err.response));

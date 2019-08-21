@@ -14,6 +14,7 @@ function App() {
       <div className="App">
       <Link to="/login">Login</Link>
       <Link to="/add-friend">Add Friend</Link>
+      <Link to="/login" onClick={() => localStorage.clear()}>Log Out</Link>
 
       <Route path="/login" component={Login} />
       <PrivateRoute path="/add-friend" component={AddFriend} />
