@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = (props) => {
-    console.log(props)
+    // console.log(props)
   const [credentials, setCredentials] = useState({
     username: "",
     password: ""
@@ -19,7 +19,7 @@ const Login = (props) => {
     axios
       .post("http://localhost:5000/api/login", credentials)
       .then(res => {
-          console.log(res.data.payload)
+        //   console.log(res.data.payload)
         localStorage.setItem("token", res.data.payload);
         props.history.push("/friends-list")
       })
@@ -33,6 +33,7 @@ const Login = (props) => {
         <input
           type="text"
           name="username"
+          placeholder="Username"
           value={credentials.username}
           onChange={changeHandler}
         />
@@ -42,6 +43,7 @@ const Login = (props) => {
         <input
           type="password"
           name="password"
+          placeholder="Password"
           value={credentials.password}
           onChange={changeHandler}
         />
