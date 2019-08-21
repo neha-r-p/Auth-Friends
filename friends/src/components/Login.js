@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-const Login = () => {
+const Login = (props) => {
+    console.log(props)
   const [credentials, setCredentials] = useState({
     username: "",
     password: ""
@@ -19,6 +21,7 @@ const Login = () => {
       .then(res => {
           console.log(res.data.payload)
         localStorage.setItem("token", res.data.payload);
+        props.history.push("/friends-list")
       })
       .catch(err => console.log(err.response));
   };
